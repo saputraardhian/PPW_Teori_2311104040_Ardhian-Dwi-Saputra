@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Registrasi - APA COBA</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;font-family:"Poppins",Arial,sans-serif;background:#f4f6f9;color:#223;display:flex;flex-direction:column;}
+
+  header.site-header{background:linear-gradient(90deg,#4facfe 0%,#00f2fe 60%);color:#fff;height:110px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.12);}
+  nav.site-nav{background:#2c3e50;height:56px;display:flex;align-items:center;justify-content:center;gap:28px;}
+  nav.site-nav a{color:#fff;text-decoration:none;font-weight:600;padding:8px 10px;position:relative;transition:color .25s;}
+  nav.site-nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:3px;background:rgba(0,242,254,0.95);transition:width .25s;}
+  nav.site-nav a:hover{color:#00f2fe;} nav.site-nav a:hover::after, nav.site-nav a.active::after{width:100%;}
+
+  main#main{flex:1;display:flex;gap:20px;max-width:1100px;margin:22px auto;width:calc(100% - 44px);}
+  aside.side{flex:1;min-width:150px;background:#ecf0f1;border-radius:10px;padding:18px;font-weight:600;box-shadow:0 6px 16px rgba(34,50,80,0.04);}
+  aside.side.ad-right{background:#fff0f0;}
+
+  section.content{flex:3;background:#fff;border-radius:12px;padding:26px;box-shadow:0 10px 28px rgba(34,50,80,0.06);}
+  h2{color:#2c3e50;text-align:center;margin-bottom:18px;}
+
+  form.reg-form{max-width:760px;margin:0 auto;display:grid;gap:12px;}
+  .row{display:grid;grid-template-columns:1fr 2fr;gap:12px;align-items:center;}
+  label{font-weight:600;color:#34495e;}
+  input[type="text"], input[type="date"], select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #d6dbe3;font-size:14px;}
+  textarea{min-height:80px;resize:vertical;}
+  .actions{display:flex;gap:12px;justify-content:center;margin-top:14px;}
+  .btn{background:linear-gradient(90deg,#4facfe,#00f2fe);color:#fff;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer;box-shadow:0 10px 22px rgba(0,122,255,0.12);}
+  .btn.ghost{background:#ddd;color:#333;box-shadow:none;}
+  .btn:hover{transform:translateY(-4px);}
+
+  footer.site-footer{background:linear-gradient(90deg,#0b6fbf 0%, #2c3e50 100%);color:#fff;height:64px;display:flex;align-items:center;justify-content:center;font-weight:600;margin-top:12px;}
+
+  @media(max-width:900px){
+    main#main{flex-direction:column;margin:16px;}
+    .row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">🌐 APA COBA WEBSITE</header>
+
+  <nav class="site-nav">
+    <a href="index.html">Beranda</a>
+    <a href="registrasi.html" class="active">Registrasi</a>
+    <a href="member.html">Member</a>
+    <a href="produk.html">Produk</a>
+  </nav>
+
+  <main id="main">
+    <aside class="side">Populer<br><small style="font-weight:400;margin-top:8px;display:block;font-size:90%;">Artikel & tips</small></aside>
+
+    <section class="content">
+      <h2>Form Registrasi</h2>
+      <form class="reg-form">
+        <div class="row"><label>Nama Lengkap</label><input type="text" placeholder="Nama lengkap"></div>
+        <div class="row"><label>Tanggal Lahir</label><input type="date"></div>
+        <div class="row"><label>Jenis Kelamin</label>
+          <div>
+            <label style="font-weight:500;"><input type="radio" name="jk"> Laki-laki</label>
+            <label style="font-weight:500;margin-left:10px;"><input type="radio" name="jk"> Perempuan</label>
+          </div>
+        </div>
+        <div class="row"><label>Alamat</label><textarea placeholder="Alamat lengkap"></textarea></div>
+        <div class="row"><label>Agama</label><select><option>Islam</option><option>Kristen</option><option>Hindu</option><option>Budha</option></select></div>
+        <div class="row"><label>Hobi</label><div><label style="font-weight:500;"><input type="checkbox"> Membaca</label> <label style="margin-left:8px;font-weight:500;"><input type="checkbox"> Memasak</label></div></div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Kirim</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="side ad-right">Advertise<br><small style="font-weight:400;margin-top:8px;display:block;font-size:90%;">Promosi</small></aside>
+  </main>
+
+  <footer class="site-footer">© 2025 APA COBA | All Rights Reserved</footer>
+</body>
+</html>

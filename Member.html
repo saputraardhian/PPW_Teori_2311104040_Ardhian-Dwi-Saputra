@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Member - APA COBA</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;font-family:"Poppins",Arial,sans-serif;background:#f4f6f9;color:#223;display:flex;flex-direction:column;}
+
+  header.site-header{background:linear-gradient(90deg,#4facfe 0%,#00f2fe 60%);color:#fff;height:110px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.12);}
+  nav.site-nav{background:#2c3e50;height:56px;display:flex;align-items:center;justify-content:center;gap:28px;}
+  nav.site-nav a{color:#fff;text-decoration:none;font-weight:600;padding:8px 10px;position:relative;transition:color .25s;}
+  nav.site-nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:3px;background:rgba(0,242,254,0.95);transition:width .25s;}
+  nav.site-nav a:hover{color:#00f2fe;} nav.site-nav a:hover::after, nav.site-nav a.active::after{width:100%;}
+
+  main#main{flex:1;display:flex;gap:20px;max-width:1200px;margin:22px auto;width:calc(100% - 44px);}
+  aside.side{flex:1;min-width:150px;background:#ecf0f1;border-radius:10px;padding:18px;font-weight:600;box-shadow:0 6px 16px rgba(34,50,80,0.04);}
+  aside.side.ad-right{background:#fff0f0;}
+
+  section.content{flex:3;background:#fff;border-radius:12px;padding:26px;box-shadow:0 10px 28px rgba(34,50,80,0.06);}
+  h2{color:#2c3e50;text-align:center;margin-bottom:18px;}
+
+  table.members{width:100%;border-collapse:collapse;overflow:hidden;border-radius:8px;box-shadow:0 8px 22px rgba(34,50,80,0.06);}
+  table.members th, table.members td{padding:12px 14px;text-align:center;border-bottom:1px solid #eef2f7;}
+  table.members th{background:linear-gradient(90deg,#4facfe,#00f2fe);color:#fff;font-weight:600;}
+  table.members tbody tr:nth-child(even){background:#fbfbff;}
+  table.members tbody tr:hover{background:#eef9ff;}
+
+  .new-btn{display:inline-block;margin-bottom:14px;background:linear-gradient(90deg,#00d4ff,#667eea);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,122,255,0.12);}
+  .new-btn:hover{transform:translateY(-4px);}
+
+  footer.site-footer{background:linear-gradient(90deg,#0b6fbf 0%, #2c3e50 100%);color:#fff;height:64px;display:flex;align-items:center;justify-content:center;font-weight:600;margin-top:12px;}
+
+  @media(max-width:900px){
+    main#main{flex-direction:column;margin:16px;}
+    table.members th, table.members td{font-size:14px;}
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">🌐 APA COBA WEBSITE</header>
+
+  <nav class="site-nav">
+    <a href="index.html">Beranda</a>
+    <a href="registrasi.html">Registrasi</a>
+    <a href="member.html" class="active">Member</a>
+    <a href="produk.html">Produk</a>
+  </nav>
+
+  <main id="main">
+    <aside class="side">Populer<br><small style="font-weight:400;margin-top:8px;display:block;font-size:90%;">Statistik & info</small></aside>
+
+    <section class="content">
+      <h2>Daftar Member</h2>
+      <a class="new-btn" href="registrasi.html">+ Tambah Member</a>
+      <table class="members">
+        <thead>
+          <tr><th>No</th><th>Nama</th><th>Email</th><th>Gender</th><th>Hobi</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Asep</td><td>asep@mail.com</td><td>Laki-laki</td><td>Membaca</td></tr>
+          <tr><td>2</td><td>Siti</td><td>siti@mail.com</td><td>Perempuan</td><td>Memasak</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <aside class="side ad-right">Advertise<br><small style="font-weight:400;margin-top:8px;display:block;font-size:90%;">Promo</small></aside>
+  </main>
+
+  <footer class="site-footer">© 2025 APA COBA | All Rights Reserved</footer>
+</body>
+</html>

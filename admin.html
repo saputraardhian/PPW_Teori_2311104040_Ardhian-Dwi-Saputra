@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard - APA COBA</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f6f9;
+    color: #222;
+  }
+
+  header {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  main {
+    display: flex;
+    min-height: calc(100vh - 120px);
+  }
+
+  nav {
+    width: 240px;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+
+  nav a:hover, nav a.active {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    padding-left: 30px;
+  }
+
+  section {
+    flex: 1;
+    padding: 40px;
+    background: #fff;
+    overflow-y: auto;
+  }
+
+  .card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+  }
+
+  h2 { margin-bottom: 15px; color: #2c3e50; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  th {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+  }
+
+  .btn {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn:hover { transform: translateY(-2px); }
+  .btn.danger { background: #e74c3c; }
+  .btn.danger:hover { background: #c0392b; }
+
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  footer {
+    background: linear-gradient(90deg, #1565c0, #2c3e50);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <header>🌐 APA COBA ADMIN DASHBOARD</header>
+
+  <main>
+    <nav>
+      <a href="#" class="active" onclick="showSection('user')">📊 Data User</a>
+      <a href="#" onclick="showSection('produk')">🛒 Kelola Produk</a>
+      <a href="#" onclick="showSection('member')">👥 Member</a>
+      <a href="#" onclick="showSection('password')">🔒 Edit Password</a>
+      <a href="#">🚪 Logout</a>
+    </nav>
+
+    <section id="content">
+      <!-- DATA USER -->
+      <div id="user" class="card section-content">
+        <h2>Data User</h2>
+        <table>
+          <thead>
+            <tr><th>No</th><th>Nama</th><th>Email</th><th>Role</th><th>Aksi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Ardhian</td><td>ardhian@mail.com</td><td>Admin</td>
+              <td><button class="btn">Edit</button> <button class="btn danger">Hapus</button></td></tr>
+            <tr><td>2</td><td>Farrel</td><td>farrel@mail.com</td><td>Staff</td>
+              <td><button class="btn">Edit</button> <button class="btn danger">Hapus</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- KELOLA PRODUK -->
+      <div id="produk" class="card section-content" style="display:none;">
+        <h2>Kelola Produk</h2>
+        <button class="btn" style="margin-bottom:10px;">+ Tambah Produk</button>
+        <table>
+          <thead>
+            <tr><th>No</th><th>Nama Produk</th><th>Harga</th><th>Aksi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Pasta Carbonara</td><td>Rp 25.000</td>
+              <td><button class="btn">Edit</button> <button class="btn danger">Hapus</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- MEMBER -->
+      <div id="member" class="card section-content" style="display:none;">
+        <h2>Member</h2>
+        <table>
+          <thead>
+            <tr><th>No</th><th>Nama</th><th>Email</th><th>Status</th><th>Aksi</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Siti</td><td>siti@mail.com</td><td>Aktif</td>
+              <td><button class="btn danger">Nonaktifkan</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- EDIT PASSWORD -->
+      <div id="password" class="card section-content" style="display:none;">
+        <h2>Edit Password</h2>
+        <form style="max-width:400px;">
+          <label>Password Lama</label>
+          <input type="password" placeholder="Masukkan password lama">
+          <label>Password Baru</label>
+          <input type="password" placeholder="Masukkan password baru">
+          <button type="submit" class="btn">Simpan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 APA COBA | Admin Panel</footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section-content').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
